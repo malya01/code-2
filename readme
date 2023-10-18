@@ -1,0 +1,21 @@
+class Solution {
+    public boolean isHappy(int n) {
+        int Slow = n;
+        int fast = n;
+        do{
+            Slow = square(Slow);
+            fast = square(square(fast));
+        } while(Slow!=fast);
+            return Slow==1;
+        }
+         public int square(int num){
+             int ans = 0;
+             while(num>0){
+                 int remainder = num % 10;
+                 ans += remainder* remainder;
+                 num/=10;
+         }
+         return ans;
+
+    }
+}
